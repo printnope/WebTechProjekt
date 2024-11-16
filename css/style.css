@@ -1,0 +1,49 @@
+.station-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.station-card {
+    flex: 1 1 calc(33.333% - 20px); /* Drei Karten pro Zeile */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.station-card h2 {
+    margin-top: 0;
+}
+
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #e6e5e5;
+    border-radius: 5px;
+    color: #8f8f8f;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+}
+
+
+
+#map { height: 500px; }
