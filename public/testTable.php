@@ -9,7 +9,7 @@ include ("../includes/header.php");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -25,11 +25,6 @@ include ("../includes/header.php");
 <div id="map"></div>
 
 
-
-
-
-<?php include("../includes/footer.php")?>
-</body>
 <script>
     // Initialisierung der Karte und Setzen des Fokus auf Frankfurt
     var map = L.map('map').setView([50.1109, 8.6821], 13);
@@ -39,5 +34,49 @@ include ("../includes/header.php");
         attribution: 'Kartendaten © <a href="https://www.openstreetmap.org/">OpenStreetMap</a>-Mitwirkende',
         maxZoom: 19,
     }).addTo(map);
+
+
+    navigator.geolocation.watchPosition(success, error);
+    let marker, circle, zoomed;
+
+    function success(position) {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        const acc = position.coords.accuracy;
+
+        // Falls bereits ein Marker/Kreis vorhanden ist, entfernen
+        if (marker) {
+            map.removeLayer(marker);
+        }
+        if (circle) {
+            map.removeLayer(circle);
+        }
+
+        // Neuen Marker und Kreis hinzufügen
+        marker = L.marker([lat, lon]).addTo(map);
+        circle = L.circle([lat, lon], { radius: acc }).addTo(map);
+
+        // Karte auf den neuen Standort zentrieren
+        map.setView([lat, lon]);
+
+    }
+
+
+    function error(error) {
+
+        if (error.code === 1) {
+            alert('please allow geolocation access');
+        } else{
+            alert("cannot read location");
+        }
+    }
+
+
 </script>
+
+<?php include("../includes/footer.php")?>
+</body>
+
+
+
 </html>
