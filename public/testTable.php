@@ -13,7 +13,7 @@ include ("../includes/header.php");
 </head>
 
 <body>
->
+
 <nav>
     <ul>
         <li><a href="?display=stations">Stationen</a></li>
