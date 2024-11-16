@@ -25,7 +25,7 @@ function displayStations()
         echo "<p>Endvorgänge: " . $row['Endvorgaenge'] . "</p>";
 
         // Gesamtvorgänge berechnen
-        $total_trips = $row['Startvorgaenge'] + $row['Endvorgaenge'];
+        $total_trips = $row['Startvorgaenge'];
         echo "<p>Gesamtvorgänge: " . $total_trips . "</p>";
 
         // Beliebtestes Ziel von dieser Station

@@ -8,12 +8,12 @@ include ("../includes/header.php");
     <title>Interaktive Karte von Frankfurt</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script
 </head>
+
 <body>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+>
 <nav>
     <ul>
         <li><a href="?display=stations">Stationen</a></li>
@@ -27,6 +27,9 @@ include ("../includes/header.php");
 
 
 
+
+<?php include("../includes/footer.php")?>
+</body>
 <script>
     // Initialisierung der Karte und Setzen des Fokus auf Frankfurt
     var map = L.map('map').setView([50.1109, 8.6821], 13);
@@ -37,6 +40,4 @@ include ("../includes/header.php");
         maxZoom: 19,
     }).addTo(map);
 </script>
-<?php include("../includes/footer.php")?>
-</body>
 </html>

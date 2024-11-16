@@ -21,7 +21,6 @@ include ("../includes/SQLfunctions.php");
         } elseif (isset($_GET['display']) && $_GET['display'] == 'bikes') {
             displayBikeDetails();
         }
-
         ?>
     </div>
 </body>
