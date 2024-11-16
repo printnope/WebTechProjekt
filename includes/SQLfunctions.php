@@ -255,5 +255,4 @@ function displayBikeDetails()
     $conn->close();
 }
 
-
 ?>
