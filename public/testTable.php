@@ -69,13 +69,9 @@ include ("../includes/header.php");
             alert("cannot read location");
         }
     }
-
-
 </script>
+
 
 <?php include("../includes/footer.php")?>
 </body>
-
-
-
 </html>
