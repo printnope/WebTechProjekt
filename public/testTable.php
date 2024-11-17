@@ -58,7 +58,6 @@ include ("../includes/header.php");
 
         // Karte auf den neuen Standort zentrieren
         map.setView([lat, lon]);
-
     }
 
 
